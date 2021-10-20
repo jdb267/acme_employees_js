@@ -152,6 +152,19 @@ spacer('');
 
 spacer('displayManagementTree');
 //given a tree of employees, generate a display which displays the hierarchy
+
+const displayManagementTree = (emp) => {
+  let arr = [];
+
+  if (!emp.reports) {
+    return emp.name;
+  } else {
+    emp.reports.forEach((nm) => displayManagementTree(nm));
+  }
+
+  console.log(arr.join('\n'));
+};
+
 displayManagementTree(generateManagementTree(employees)); /*
   moe
   -larry
